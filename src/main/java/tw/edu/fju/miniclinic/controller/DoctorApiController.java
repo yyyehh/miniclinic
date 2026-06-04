@@ -23,7 +23,7 @@ public class DoctorApiController {
     @Autowired
     private DoctorRepository doctorRepo;
 
-    @GetMapping("/api/doctors")
+    @GetMapping(value = "/api/doctors", produces = "application/json;charset=UTF-8")
     public List<Doctor> getDoctors(
             @RequestParam(required = false) String department) {
         if (department == null || department.isBlank()) {
@@ -32,7 +32,7 @@ public class DoctorApiController {
         return doctorRepo.findByDepartment(department);
     }
 
-    @GetMapping("/api/doctors/{doctorId}")
+    @GetMapping(value = "/api/doctors/{doctorId}", produces = "application/json;charset=UTF-8")
     public ResponseEntity<Doctor> getDoctor(@PathVariable String doctorId) {
         Optional<Doctor> doctor = doctorRepo.findById(doctorId);
         return doctor

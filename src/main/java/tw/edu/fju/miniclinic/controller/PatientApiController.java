@@ -15,12 +15,12 @@ public class PatientApiController {
     @Autowired
     private PatientRepository patientRepo;
 
-    @GetMapping("/api/patients")
+    @GetMapping(value = "/api/patients", produces = "application/json;charset=UTF-8")
     public List<Patient> getPatients() {
         return patientRepo.findAll();
     }
 
-    @GetMapping("/api/patients/{chartNo}")
+    @GetMapping(value = "/api/patients/{chartNo}", produces = "application/json;charset=UTF-8")
     public ResponseEntity<Patient> getPatient(@PathVariable String chartNo) {
         return patientRepo.findById(chartNo)
             .map(patient -> ResponseEntity.ok(patient))          // 找到病患，回傳 200 OK

@@ -4,7 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import com.fasterxml.jackson.annotation.JsonIgnore; //新增
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "doctor")
@@ -44,6 +44,8 @@ public class Doctor {
     public String getName() { return name; }
     public String getDepartment() { return department; }
     public String getSpecialty() { return specialty; }
+    
+    @JsonIgnore // 加在 Getter 上確保序列化時絕對會被忽略
     public String getPasswordHash() { return passwordHash; } // 新增
 
     // Setters（之後會用到）

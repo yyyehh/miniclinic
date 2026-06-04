@@ -22,6 +22,12 @@ public class StatsApiController {
     @Autowired
     private AppointmentRepository appointmentRepo;
 
+    // 新增：健康檢查端點，供外部工具查核系統狀態
+    @GetMapping("/api/health")
+    public Map<String, String> getHealth() {
+        return Map.of("status", "OK");
+    }
+
     @GetMapping("/api/stats")
     public Map<String, Object> getStats() {
         // 使用 LinkedHashMap 確保 JSON 欄位順序與規格範例一致
