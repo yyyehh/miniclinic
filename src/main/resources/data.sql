@@ -16,4 +16,8 @@ INSERT OR IGNORE INTO patient (chart_no, name, gender, birth_date, phone) VALUES
 INSERT OR IGNORE INTO appointment (appt_id, chart_no, doctor_id, appt_date, time_slot, status) VALUES
     (1, 'TEST00001', 'D001', '2026-05-01', 'AM', 'BOOKED'),
     (2, 'TEST00002', 'D002', '2026-05-01', 'AM', 'BOOKED'),
-    (3, 'TEST00003', 'D003', '2026-05-02', 'PM', 'BOOKED');
+    (3, 'TEST00003', 'D003', '2026-05-02', 'PM', 'BOOKED'),
+    (4, 'TEST00001', 'D004', '2026-05-03', 'AM', 'BOOKED'),
+    (5, 'TEST00002', 'D005', '2026-05-03', 'PM', 'COMPLETED'),
+    (6, 'TEST00003', 'D001', '2026-05-04', 'AM', 'COMPLETED'),
+    (7, 'TEST00001', 'D002', '2026-05-04', 'PM', 'CANCELLED');

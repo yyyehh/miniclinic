@@ -31,7 +31,8 @@ public class StatsApiController {
         result.put("totalAppointments", (int) appointmentRepo.count());
 
         Map<String, Integer> byStatus = new LinkedHashMap<>();
-        // 強制轉型為 int 以符合規格要求，並使用 countByStatus 進行統計
+        // 使用 countByStatus 進行統計。注意：若資料庫區分大小寫，請確保與傳入值一致
+        // 這裏依照規格書要求使用大寫字串作為 Key
         byStatus.put("BOOKED", (int) appointmentRepo.countByStatus("BOOKED"));
         byStatus.put("COMPLETED", (int) appointmentRepo.countByStatus("COMPLETED"));
         byStatus.put("CANCELLED", (int) appointmentRepo.countByStatus("CANCELLED"));
