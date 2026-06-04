@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>醫師資料 - MiniClinic</title>
+    <style>
+        body { font-family: "Microsoft JhengHei", sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; }
+        h1 { color: #0F2443; border-bottom: 3px solid #14B8A6; padding-bottom: 10px; }
+        .info-card { background: #F8FAFC; padding: 20px; border-radius: 8px; margin-top: 20px; border: 1px solid #E2E8F0; }
+        .info-item { margin-bottom: 16px; font-size: 16px; }
+        .info-label { font-weight: bold; color: #475569; display: inline-block; width: 100px; }
+        .back-link { display: inline-block; margin-top: 20px; color: #14B8A6; text-decoration: none; font-weight: bold; }
+        .back-link:hover { text-decoration: underline; color: #0D9488; }
+    </style>
+</head>
+<body>
+    <h1>醫師詳細資料</h1>
+
+    <div th:if="${doctor != null}" class="info-card">
+        <div class="info-item">
+            <span class="info-label">醫師編號：</span>
+            <span th:text="${doctor.doctorId}"></span>
+        </div>
+        <div class="info-item">
+            <span class="info-label">姓名：</span>
+            <span th:text="${doctor.name}"></span>
+        </div>
+        <div class="info-item">
+            <span class="info-label">科別：</span>
+            <span th:text="${doctor.department}"></span>
+        </div>
+        <div class="info-item">
+            <span class="info-label">專長：</span>
+            <span th:text="${doctor.specialty}"></span>
+        </div>
+    </div>
+
+    <a th:href="@{/doctors}" class="back-link">← 回醫師清單</a>
+</body>
+</html>
