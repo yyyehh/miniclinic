@@ -79,13 +79,14 @@
                 <td>
                     <span th:text="${appt.status}"
                           th:class="${'status-' + appt.status}">BOOKED</span>
-                    
+                </td>
+                <td>
                     <!-- 僅在狀態為 BOOKED 時顯示的操作按鈕 -->
-                    <th:block th:if="${appt.status == 'BOOKED'}">
+                    <th:block th:if="${#strings.toString(appt.status) == 'BOOKED'}">
                         <button th:data-id="${appt.apptId}"
                                 onclick="completeAppointment(this)"
                                 class="complete-btn"
-                                style="margin-left: 10px;">看診完成</button>
+                                style="margin-right: 5px;">看診完成</button>
                                 
                         <button th:data-id="${appt.apptId}"
                                 onclick="cancelAppointment(this)"
