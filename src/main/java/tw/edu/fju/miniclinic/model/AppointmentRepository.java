@@ -13,8 +13,6 @@ public interface AppointmentRepository extends JpaRepository<Appointment, Long> 
     List<Appointment> findByPatient(Patient patient);
     List<Appointment> findByDoctorAndApptDate(Doctor doctor, LocalDate apptDate);  // 新加入
     long countByApptDateBetween(LocalDate from, LocalDate to);
-    
-    // 新增：利用 Spring Data JPA 自動生成 countBy 查詢
     long countByStatus(String status);
 
     // 改用 Native Query 實作科別統計

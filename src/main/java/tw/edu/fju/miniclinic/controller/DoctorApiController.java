@@ -40,7 +40,7 @@ public class DoctorApiController {
             .orElse(ResponseEntity.notFound().build());  // 沒有 → 404
     }
 
-    @GetMapping("/api/departments")
+    @GetMapping(value = "/api/departments", produces = "application/json;charset=UTF-8")
     public List<String> getDepartments() {
         return doctorRepo.findAllDepartments();
     }

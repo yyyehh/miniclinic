@@ -1,0 +1,32 @@
+﻿[
+    {
+        "doctorId":  "D001",
+        "name":  "�敹�撣�",
+        "department":  "摰園蝘�",
+        "specialty":  "銝���蝘��抒�恣���"
+    },
+    {
+        "doctorId":  "D002",
+        "name":  "��蔗��撣�",
+        "department":  "�蝘�",
+        "specialty":  "敹��蝞～���憯�"
+    },
+    {
+        "doctorId":  "D003",
+        "name":  "��遣��撣�",
+        "department":  "敺拙蝘�",
+        "specialty":  "���摰喋���儔�"
+    },
+    {
+        "doctorId":  "D004",
+        "name":  "����撣�",
+        "department":  "撠���",
+        "specialty":  "��咱������蝔�"
+    },
+    {
+        "doctorId":  "D005",
+        "name":  "撘菟��撣�",
+        "department":  "頨怠���",
+        "specialty":  "���仃�����矽�"
+    }
+]
